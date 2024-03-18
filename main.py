@@ -24,7 +24,7 @@ def get_letters_count_from(book):
         else:
             dictionary_letters[letter] = 1
 
-    sorted_array = sorted(dictionary_letters.items(), key=lambda x:x[1])
+    sorted_array = sorted(dictionary_letters.items(), key=lambda x: x[1])
     ordered_array = sorted_array[::-1]
     return ordered_array
 
@@ -43,6 +43,7 @@ def print_report(path, book):
         print(f"The '{key}' character was found {value} {time_word}")
 
     print("--- End report ---")
+
 
 def main():
     path = "./books/frankenstein.txt"
