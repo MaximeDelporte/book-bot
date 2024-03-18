@@ -1,6 +1,5 @@
-def count_words(book):
-    words = len(book.split())
-    print(words)
+def count_words(book) -> int:
+    return len(book.split())
 
 def count_letters(book):
     lowered_string = book.lower()
@@ -23,13 +22,17 @@ def count_letters(book):
 
     print(count_letters)
 
-def main():
-    book = ""
-    with open("./books/frankenstein.txt") as f:
-        book = f.read()
+def print_report(path, book):
+    print(f"--- Begin report of {path} ---")
+    words = count_words(book)
+    print(f"{words} words found in the document")
 
-    count_words(book)
-    count_letters(book)
+def main():
+    path = "./books/frankenstein.txt"
+    book = ""
+    with open(path) as f:
+        book = f.read()
+        print_report(path, book)
 
 main()
 
